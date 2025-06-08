@@ -1,11 +1,12 @@
-# Zach L ClassWork and Projects for Java 2
+# Zach L Weekly-Practice
 
-## CS-152 at CT State College
+## CS-152
 
 > A Repo' for all of my ClassWork and  Projects that is currently ongoing
+  - Back to main repo
   - Week 0: Review of Java 1
   - Week 1: Big O Notation / Time & Space Complexities
-  - Week 2: Single & Multi-Dimensional Arrays [Week 2 Practice Problems]()
+  - Week 2: Single & Multi-Dimensional Arrays
 
 ***
 
