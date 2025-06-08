@@ -2,8 +2,8 @@
 
 ## CS-152
 
-> A Repo' for all of my ClassWork and  Projects that is currently ongoing
-  - Back to main repo
+> A Repo' for all of my practice problems that is currently ongoing
+  - [Back to main repo](https://github.com/zachsarc/CS-152_Java2/blob/main/README.md)
   - Week 0: Review of Java 1
   - Week 1: Big O Notation / Time & Space Complexities
   - Week 2: Single & Multi-Dimensional Arrays
