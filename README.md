@@ -119,6 +119,8 @@ public class Week2MultiDimensionalArraySums {
 ***
 
 ## Week 3: BigInteger Factorials Using Recursion
+
+## BigInteger Factorials Using Recursion
 ```java
 /* INSTRUCTION
 (Factorial) Using the BigInteger class introduced in Section 10.9, you can
