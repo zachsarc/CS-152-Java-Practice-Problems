@@ -1,0 +1,117 @@
+# Zach L Weekly-Practice
+
+## CS-152
+
+> A Repo' for all of my practice problems that is currently ongoing
+  - [Back to main repo](https://github.com/zachsarc/CS-152_Java2/blob/main/README.md)
+  - Week 0: Review of Java 1
+  - Week 1: Big O Notation / Time & Space Complexities
+  - Week 2: Single & Multi-Dimensional Arrays
+
+***
+
+### Week 0: Review of Java 1
+
+***
+
+### Week 1 Practice: Big O Notation / Time & Space Complexities
+None
+***
+### Week 2 Practice: Single & Multi-Dimensional Arrays
+
+## Grade Sheet
+```java
+import java.util.Scanner;
+
+public class Week2GradesX {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of students: ");
+        int numOfStudents = sc.nextInt();
+        int best = 100;
+
+        if (numOfStudents <= 0) {
+            System.out.println("Enter a positive integer silly, exiting...");
+            System.exit(0);
+        }
+
+        int[] studentScores = new int[numOfStudents];
+        System.out.println("Enter " + numOfStudents + " scores:");
+        for (int z = 0; z < numOfStudents; z++) {
+            studentScores[z] = sc.nextInt();
+            if (studentScores[z] < 0) {
+                System.out.println("Please enter a score higher than 0, exiting...");
+                System.exit(0);
+            }
+        }
+
+        int counter = 0;
+            for (int j = 0; j < studentScores.length; j++)
+                if (studentScores[j] >= (best - 10)) {
+                System.out.println("Student " + counter + " score is: " + studentScores[j] + " and grade is: A");
+                counter++;
+            } else if (studentScores[j] >= (best - 20)) {
+                    System.out.println("Student " + counter + " score is: " + studentScores[j] + " and grade is: B");
+                    counter++;
+                } else if (studentScores[j] >= (best - 30)) {
+                    System.out.println("Student " + counter + " score is: " + studentScores[j] + " and grade is: C");
+                    counter++;
+                } else if (studentScores[j] >= (best - 40)) {
+                    System.out.println("Student " + counter + " score is: " + studentScores[j] + " and grade is: D");
+                    counter++;
+                } else {
+                    System.out.println("Student " + counter + " score is: " + studentScores[j] + " and grade is: F");
+                    counter++;
+                }
+    }
+}
+```
+***
+
+## Multi-Dimensional Array Sums
+```java
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Week2MultiDimensionalArraySums {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double[][] matrix = new double[3][4]; // Create new matrix[][] array with size of col:3 row:4
+
+        System.out.print("Enter a 3x4 Matrix Row by Row: ");
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.printf("Enter row %d (4 numbers seperated by spaces): ", i + 1); // prompts the user to enter row 0
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (!sc.hasNextDouble()) {
+                    System.out.println("Decimal not entered, exiting..."); // Handles the non-decimal case
+                    return;
+                }
+                matrix[i][j] = sc.nextDouble(); // Captures each value seperated from spaces
+            }
+
+            // Displays matrix to confirm input
+            System.out.println("\nThe matrix you entered is:");
+                for (double[] row : matrix) { // Enhanced for loop
+                    System.out.println(Arrays.toString(row));
+                }
+            }
+        // Call to sumColumn() method with parameters of the "Matrix Array" with a column start index of 0
+        double sumOfColumn = sumColumn(matrix, 0);
+
+        // Display the sums using traditional for loop formatting them correctly
+        for (int col = 0; col < matrix[0].length; col++) {
+            double columnSum = sumColumn(matrix, col);
+            System.out.printf("Sum of colum %d is: %.2f%n", col, columnSum);
+        }
+    }
+
+    public static double sumColumn(double[][] m, int columnIndex) {
+        double sum = 0;
+        for (int i = 0; i <m.length; i++) {
+            sum += m[i][columnIndex];
+        }
+        return sum;
+    }
+}
+
+```
