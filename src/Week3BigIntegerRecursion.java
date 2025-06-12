@@ -11,14 +11,17 @@ import java.math.BigInteger;
 import java.util.Scanner;
 public class Week3BigIntegerRecursion {
     public static void main (String[] args) {
+        // Create new Scanner and BigInteger Objects
         Scanner sc = new Scanner(System.in);
         BigInteger bigInt1 = null;
 
-        System.out.println("Please enter your number: ");
+        // Prompt user to enter valid integer
+        System.out.println("Please enter your Integer: ");
+
         try {
             bigInt1 = new BigInteger(sc.nextLine());
         } catch (NumberFormatException e) {
-            // Practicing using e for debug
+            // Practice using "e" for debug
             System.out.println("Error Message: " + e.getMessage());
             System.out.println("Please enter a valid integer, exiting");
             System.exit(0);
@@ -26,6 +29,7 @@ public class Week3BigIntegerRecursion {
         System.out.println(bigInt1 + "! = " + bigIntFactorial(bigInt1));
     }
 
+    // Method to work with getting a Factorial number of a BigInteger accordingly
     public static BigInteger bigIntFactorial(BigInteger n) {
         if (n.equals(BigInteger.ZERO)) { // Base case
             return BigInteger.ONE;
