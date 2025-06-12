@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Week2MultiDimensionalArraySums {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         double[][] matrix = new double[3][4]; // Create new matrix[][] array with size of col:3 row:4
 
@@ -23,8 +24,6 @@ public class Week2MultiDimensionalArraySums {
                     System.out.println(Arrays.toString(row));
                 }
             }
-        // Call to sumColumn() method with parameters of the "Matrix Array" with a column start index of 0
-        double sumOfColumn = sumColumn(matrix, 0);
 
         // Display the sums using traditional for loop formatting them correctly
         for (int col = 0; col < matrix[0].length; col++) {
