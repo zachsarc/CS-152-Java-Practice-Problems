@@ -9,7 +9,7 @@ This program demonstrates core principles of recursion while maintaining efficie
 
 import java.math.BigInteger;
 import java.util.Scanner;
-public class Week3BigIntegerRecursion {
+public class Week4BigIntegerRecursion {
     public static void main (String[] args) {
         // Create new Scanner and BigInteger Objects
         Scanner sc = new Scanner(System.in);

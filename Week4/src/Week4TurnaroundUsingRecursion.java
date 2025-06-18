@@ -6,7 +6,7 @@ public static void reverseDisplay(String value)
 that prompts the user to enter a string and displays its reversal.
 */
 import java.util.Scanner;
-public class Week3TurnaroundUsingRecursion {
+public class Week4TurnaroundUsingRecursion {
     public static void main (String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter word's to see the reverse: ");

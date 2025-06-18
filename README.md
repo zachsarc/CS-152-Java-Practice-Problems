@@ -24,7 +24,7 @@ None
 ```java
 import java.util.Scanner;
 
-public class Week2GradesX {
+public class Week3GradesX {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of students: ");
@@ -74,7 +74,7 @@ public class Week2GradesX {
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Week2MultiDimensionalArraySums {
+public class Week3MultiDimensionalArraySums {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double[][] matrix = new double[3][4]; // Create new matrix[][] array with size of col:3 row:4
@@ -133,7 +133,7 @@ This program demonstrates core principles of recursion while maintaining efficie
 
 import java.math.BigInteger;
 import java.util.Scanner;
-public class Week3BigIntegerRecursion {
+public class Week4BigIntegerRecursion {
     public static void main (String[] args) {
         // Create new Scanner and BigInteger Objects
         Scanner sc = new Scanner(System.in);
@@ -181,7 +181,7 @@ public class Week3BigIntegerRecursion {
  */
 import java.util.Scanner;
 import java.util.InputMismatchException;
-public class Week3FindingGCD {
+public class Week4FindingGCD {
     public static void main(String[] args) {
         // Try with resources for the autoclose feature
         try (Scanner sc = new Scanner(System.in)) {
@@ -232,7 +232,7 @@ public static void reverseDisplay(String value)
 that prompts the user to enter a string and displays its reversal.
 */
 import java.util.Scanner;
-public class Week3TurnaroundUsingRecursion {
+public class Week4TurnaroundUsingRecursion {
     public static void main (String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter word's to see the reverse: ");

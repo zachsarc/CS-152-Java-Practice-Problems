@@ -12,7 +12,7 @@
  */
 import java.util.Scanner;
 import java.util.InputMismatchException;
-public class Week3FindingGCD {
+public class Week4FindingGCD {
     public static void main(String[] args) {
         // Try with resources for the autoclose feature
         try (Scanner sc = new Scanner(System.in)) {
