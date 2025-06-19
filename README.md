@@ -4,7 +4,7 @@
 
 > A Repo' for all of my practice problems that is currently ongoing
   - [Back to main repo](https://github.com/zachsarc/CS-152_Java2/blob/main/README.md)
-  - Week 1: [Review of Java 1](#Week-1-Review-of-Java-1)
+  - [Week 1](##Week-1): Review of Java 1
   - Week 2: [Big O Notation / Time & Space Complexities] (##Week 2 Practice: Big O Notation / Time & Space Complexities)
   - Week 3: [Single & Multi-Dimensional Arrays](##Week 3 Practice: Single & Multi-Dimensional Arrays)
   - Week 4: [Recursion](##Week 4: BigInteger Factorials Using Recursion)
@@ -12,7 +12,7 @@
 
 ***
 
-## Week-1-Review-of-Java-1
+## Week-1 Review of Java 1
 
 ***
 
