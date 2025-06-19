@@ -4,21 +4,22 @@
 
 > A Repo' for all of my practice problems that is currently ongoing
   - [Back to main repo](https://github.com/zachsarc/CS-152_Java2/blob/main/README.md)
-  - Week 1: Review of Java 1
-  - Week 2: Big O Notation / Time & Space Complexities
-  - Week 3: Single & Multi-Dimensional Arrays
-  - Week 4: Recursion
+  - Week 1: [Review of Java 1](## Week 1: Review of Java 1)
+  - Week 2: [Big O Notation / Time & Space Complexities] (## Week 2 Practice: Big O Notation / Time & Space Complexities)
+  - Week 3: [Single & Multi-Dimensional Arrays](## Week 3 Practice: Single & Multi-Dimensional Arrays)
+  - Week 4: [Recursion](## Week 4: BigInteger Factorials Using Recursion)
+  - Week 5: [Object-Oriented Thinking (OOP)](## Week 5: Object Oriented Thinking (OOP))
 
 ***
 
-### Week 1: Review of Java 1
+## Week 1: Review of Java 1
 
 ***
 
-### Week 2 Practice: Big O Notation / Time & Space Complexities
+## Week 2 Practice: Big O Notation / Time & Space Complexities
 None
 ***
-### Week 3 Practice: Single & Multi-Dimensional Arrays
+## Week 3 Practice: Single & Multi-Dimensional Arrays
 
 ## Grade Sheet
 ```java
@@ -120,7 +121,7 @@ public class Week3MultiDimensionalArraySums {
 
 ## Week 4: BigInteger Factorials Using Recursion
 
-## BigInteger Factorials Using Recursion
+### BigInteger Factorials Using Recursion
 ```java
 /* INSTRUCTION
 (Factorial) Using the BigInteger class introduced in Section 10.9, you can
@@ -219,7 +220,6 @@ public class Week4FindingGCD {
         }
     }
 ```
-
 ***
 
 ## Reversal of User Input Using Recursion
@@ -260,4 +260,155 @@ public class Week4TurnaroundUsingRecursion {
         reverseDisplay(s.substring(0, s.length() - 1)); // Recursive call which extracts substrings of indexes 0-4 because the last one is already printed (s.length() - 1)
     }
 }
+```
+***
+
+## Week 5: Object Oriented Thinking (OOP)
+
+### The MyInteger Class
+
+```java
+public class MyInteger {
+    public int value;
+
+    // Constructor
+    public MyInteger(int value) {
+        this.value = value;
+    }
+
+    // Getter
+    public int getMyInteger() {
+        return value;
+    }
+
+    // Instance methods
+    public boolean isEven() {
+        return value % 2 == 0;
+    }
+
+    public boolean isOdd() {
+        return value % 2 == 1;
+    }
+
+    public boolean isPrime() {
+        if (value <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(value); i++) {
+            if (value % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Static methods
+    static boolean isEven(int n) {
+        return n % 2 == 0;
+    }
+
+    static boolean isOdd(int n) {
+        return n % 2 == 1;
+    }
+
+    static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Static overloaded methods reusing same logic to keep code "DRY"
+    public static boolean isEven(MyInteger myInt) {
+        return isEven(myInt.getMyInteger());
+    }
+
+    static boolean isOdd(MyInteger myInt) {
+        return isOdd(myInt.getMyInteger());
+    }
+
+    static boolean isPrime(MyInteger myInt) {
+        return isPrime(myInt.getMyInteger());
+    }
+
+    // Instance Method for equals
+    public boolean equals(int x) {
+        return this.value == x;
+    }
+
+    // Overloaded method for equals
+    public boolean equals(MyInteger myInt) {
+        return this.value == myInt.getMyInteger();
+    }
+
+    // Static parseInt method for an array of chars with exception throw for whoever is calling the method
+    public static int parseInt(char[] y) throws NumberFormatException {
+        String str = String.valueOf(y);
+        return Integer.parseInt(str);
+    }
+
+    // Static parseInt method for a String with exception throw for whoever is calling the method
+    public static int parseInt(String s) throws NumberFormatException{
+        return Integer.parseInt(s);
+    }
+}
+```
+### MyInteger Client (Tests for MyInteger)
+
+```java
+public class Client {
+    public static void main(String[] args) {
+
+        // Instance methods
+        MyInteger testInt = new MyInteger(2);
+        boolean testIntEven = testInt.isEven();
+        System.out.println(testIntEven);
+        boolean testIntOdd = testInt.isOdd();
+        System.out.println(testIntOdd);
+        boolean testIntPrime = testInt.isPrime();
+        System.out.println(testIntPrime);
+
+        // Static method tests
+        System.out.println(MyInteger.isEven(4));
+        System.out.println(MyInteger.isOdd(4));
+        System.out.println(MyInteger.isPrime(4));
+
+        // Static overloaded method tests
+        MyInteger myNum = new MyInteger(15);
+        System.out.println(MyInteger.isEven(myNum));
+        System.out.println(MyInteger.isOdd(myNum));
+        System.out.println(MyInteger.isPrime(myNum));
+
+        // Instance method test for equals
+        MyInteger equalInt = new MyInteger(4);
+        System.out.println(equalInt.equals(4));
+
+        // Overloaded method test for equals
+        MyInteger ovrEqualInt = new MyInteger(10);
+        System.out.println(ovrEqualInt.equals(testInt));
+
+        // Test for static parseInt(char[] y) method with correct error handling
+        try {
+            char[] chars = new char[]{'2', '5', '2', '4'};
+            int resultParsedChar = MyInteger.parseInt(chars);
+            System.out.println("Parsed int on char result: " + resultParsedChar);
+
+            // Test for static parseInt(String s) method with correct error handling
+            String str = "16534234";
+            int resultParsedString = MyInteger.parseInt(str);
+            System.out.println("Parsed int on string result: " + resultParsedString);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, Please use numeric characters");
+        }
+    }
+}
+
 ```
