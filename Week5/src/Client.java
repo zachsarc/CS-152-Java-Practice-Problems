@@ -1,5 +1,6 @@
 public class Client {
     public static void main(String[] args) {
+
         // Instance methods
         MyInteger testInt = new MyInteger(2);
         boolean testIntEven = testInt.isEven();
@@ -28,13 +29,13 @@ public class Client {
         MyInteger ovrEqualInt = new MyInteger(10);
         System.out.println(ovrEqualInt.equals(testInt));
 
-        // Test for static parseInt(char[] y) method
+        // Test for static parseInt(char[] y) method with correct error handling
         try {
             char[] chars = new char[]{'2', '5', '2', '4'};
             int resultParsedChar = MyInteger.parseInt(chars);
             System.out.println("Parsed int on char result: " + resultParsedChar);
 
-            // Test for static parseInt(String s) method
+            // Test for static parseInt(String s) method with correct error handling
             String str = "16534234";
             int resultParsedString = MyInteger.parseInt(str);
             System.out.println("Parsed int on string result: " + resultParsedString);
