@@ -13,16 +13,17 @@
 ***
 
 ## Week-1 
-<ins>***Review of Java 1***</ins>
+### <ins>***Review of Java 1***</ins>
+NONE
 
 ***
 
 ## Week-2
-<ins>***Big O Notation / Time & Space Complexities***</isn>
-None
+### <ins>***Big O Notation / Time & Space Complexities***</isn>
+NONE
 ***
 ## Week-3
-<ins>***Single & Multi-Dimensional Arrays***</ins>
+### <ins>***Single & Multi-Dimensional Arrays***</ins>
 
 ## Grade Sheet
 ```java
@@ -123,7 +124,7 @@ public class Week3MultiDimensionalArraySums {
 ***
 
 ## Week-4
-<ins>***BigInteger Factorials Using Recursion***</ins>
+### <ins>***BigInteger Factorials Using Recursion***</ins>
 
 ### BigInteger Factorials Using Recursion
 ```java
@@ -268,7 +269,7 @@ public class Week4TurnaroundUsingRecursion {
 ***
 
 ## Week-5
-<ins>***Object Oriented Thinking (OOP)***</ins>
+### <ins>***Object Oriented Thinking (OOP)***</ins>
 
 ### The MyInteger Class
 
