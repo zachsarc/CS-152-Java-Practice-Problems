@@ -1,6 +1,6 @@
 public class Faculty extends Employee {
-    int officeHours;
-    String rank;
+    private int officeHours;
+    private String rank;
 
     public Faculty(String name, String address, String phone, String email, String office, double salary, long hireTimeInMillis, int officeHours, String rank) {
         super(name, address, phone, email, office, salary, hireTimeInMillis);
@@ -17,7 +17,7 @@ public class Faculty extends Employee {
     }
 
     @Override
-    public String toString() {
-        return "Class - Faculty -- " + "Name: " + getName();
+    public String toString () {
+        return String.format("Faculty[%s, officeHours=%s, rank=%s]", super.toString(), officeHours, rank);
     }
 }

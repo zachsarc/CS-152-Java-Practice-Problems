@@ -24,7 +24,7 @@ public class Employee extends Person {
     }
 
     @Override
-    public String toString(){
-        return "Class - Employee -- " + "Name: " + getName();
+    public String toString () {
+        return String.format("Employee[%s, office=%s, salary=%.2f, dateHired=%s]", super.toString(), office, salary, dateHired.toString());
     }
 }

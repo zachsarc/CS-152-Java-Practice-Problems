@@ -1,18 +1,32 @@
 public class Student extends Person {
-    public static final String FRESHMAN = "Freshman";
-    public static final String SOPHOMORE = "Sophomore";
-    public static final String JUNIOR = "Junior";
-    public static final String SENIOR = "Senior";
+    public enum Status {
+        FRESHMAN,
+        SOPHOMORE,
+        JUNIOR,
+        SENIOR
+    }
 
-    private String status;
+    private Status status;
 
-    public Student (String name, String address, String phone, String email) {
+    public Student (String name, String address, String phone, String email, Status status) {
         super(name, address, phone, email);
+            this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
         this.status = status;
     }
 
+    public static Status[] getAllStatuses() {
+        return Status.values();
+    }
+
     @Override
-    public String toString() {
-        return "Class - Student -- " + "Name: " + getName();
+    public String toString () {
+        return String.format("Student[%s, status=%s]", super.toString(), status);
     }
 }
