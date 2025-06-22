@@ -46,21 +46,21 @@ public static void main(String[] args){
         Employee employee = new Employee("Chris Lariccia" ,"123 Berry Ln","123-456-7890","124yoohoo@gmail.com","Rescue 1 Pest Control",65000,System.currentTimeMillis() - 172800000L);
         Faculty faculty = new Faculty("Chris Lariccia" ,"123 Berry Ln","123-456-7890","124yoohoo@gmail.com","Rescue 1 Pest Control",100000000,System.currentTimeMillis() - 172800000L, 5400,"CEO");
         Staff staff = new Staff("Zach Lariccia" ,"123 Berry Ln","123-456-7890","124yoohoo@gmail.com","Rescue 1 Pest Control",100000000,System.currentTimeMillis() - 172800000L);
-        System.out.println("Person");
+        System.out.println("---------------Person---------------");
         System.out.println("Name: " + person.getName());
         System.out.println("Address: " + person.getAddress());
         System.out.println("Phone: " + person.getPhone());
         System.out.println("Email: " + person.getemail());
 
     System.out.println();
-    System.out.println("Student");
+    System.out.println("---------------Student---------------");
     System.out.println("Name: " + student.getName());
     System.out.println("Address: " + student.getAddress());
     System.out.println("Phone: " + student.getPhone());
     System.out.println("Email: " + student.getemail());
 
     System.out.println();
-    System.out.println("Employee");
+    System.out.println("---------------Employee---------------");
     System.out.println("Name: " + employee.getName());
     System.out.println("Address: " + employee.getAddress());
     System.out.println("Phone: " + employee.getPhone());
@@ -70,7 +70,7 @@ public static void main(String[] args){
     System.out.println("Hire Time (in milliseconds)" + employee.getDateHired());
 
     System.out.println();
-    System.out.println("Faculty");
+    System.out.println("---------------Faculty---------------");
     System.out.println("Name: " + faculty.getName());
     System.out.println("Address: " + faculty.getAddress());
     System.out.println("Phone: " + faculty.getPhone());
@@ -82,15 +82,13 @@ public static void main(String[] args){
     System.out.println("Rank: " + faculty.getRank());
 
     System.out.println();
-    System.out.println("Staff");
+    System.out.println("---------------Staff---------------");
     System.out.println("Name: " + staff.getName());
-    System.out.println("Address: " + faculty.getAddress());
-    System.out.println("Phone: " + faculty.getPhone());
-    System.out.println("Email: " + faculty.getemail());
-    System.out.println("Office: " + faculty.getOffice());
-    System.out.println("Salary: " + faculty.getSalary());
-    System.out.println("Hire Date: " + faculty.getDateHired());
-    System.out.println("Office Hours: " + faculty.getOfficeHours());
-    System.out.println("Rank: " + faculty.getRank());
+    System.out.println("Address: " + staff.getAddress());
+    System.out.println("Phone: " + staff.getPhone());
+    System.out.println("Email: " + staff.getemail());
+    System.out.println("Office: " + staff.getOffice());
+    System.out.println("Salary: " + staff.getSalary());
+    System.out.println("Hire Date: " + staff.getDateHired());
     }
 }
