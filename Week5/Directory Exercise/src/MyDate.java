@@ -5,10 +5,6 @@ public class MyDate {
     private int month;
     private int day;
 
-    public MyDate() {
-        MyDate newDate = new MyDate();
-    }
-
     public MyDate(long elapsedTime) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(elapsedTime);
