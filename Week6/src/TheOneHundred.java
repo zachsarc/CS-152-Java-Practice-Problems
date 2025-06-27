@@ -13,18 +13,28 @@ public class TheOneHundred {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("What is the index of the integer you would like to find? ");
-        int userIndex = sc.nextInt();
         int[] array = createArray();
+
+        do {
+            System.out.print("What is the index of the integer you would like to find? ");
+            int userIndex = sc.nextInt();
+            if (userIndex < 0) {
+                System.out.println("Please enter a positive integer from 0-100, please try again");
+                continue;
+            }
 
         try {
             int result = printElementAtIndex(array, userIndex);
             System.out.println("The value at index " + userIndex + " is: " + result);
+            break; // Exit loop if successful
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Index Out of Bounds");
         }
-        sc.close();
-    }
+    } while (true);
+
+    sc.close();
+
+}
 
     public static int[] createArray() {
         int size = 100;
