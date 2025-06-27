@@ -16,6 +16,9 @@ public class BinaryStringConverter {
                 System.out.println("Not a binary number");
             }
         } while (true);
+
+        sc.close();
+
     }
 
     public static double thisToThat (String inp) throws NumberFormatException{
