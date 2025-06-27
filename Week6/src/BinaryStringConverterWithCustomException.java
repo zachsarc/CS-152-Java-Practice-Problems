@@ -21,6 +21,8 @@ public class BinaryStringConverterWithCustomException {
                     System.out.println("Not a binary number");
                 }
             } while (true);
+
+            sc.close();
         }
 
         public static double thisToThat (String inp) throws BinaryFormatException{
