@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /**
 (ArrayIndexOutOfBoundsException) Write a program that meets the
  following requirements:
