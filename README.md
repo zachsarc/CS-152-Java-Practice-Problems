@@ -825,7 +825,7 @@ public class BinaryStringConverterWithCustomException {
     }
 ```
 ***
-### File Analyzer using IO
+### File Analyzer using File IO
 ```java
 /**
  * (Count characters, words, and lines in a file) Write a program that will count
