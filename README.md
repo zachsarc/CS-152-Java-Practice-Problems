@@ -8,7 +8,7 @@
   - [Week 3](#Week-3): Single & Multi-Dimensional Arrays
   - [Week 4](#Week-4): Recursion
   - [Week 5](#Week-5): Object-Oriented Thinking (OOP)
-  - [Week 6](#Week-6): Exception Handling
+  - [Week 6](#Week-6): Exception Handling & File IO
 
 ***
 
