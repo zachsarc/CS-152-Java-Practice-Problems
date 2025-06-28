@@ -8,6 +8,7 @@
   - [Week 3](#Week-3): Single & Multi-Dimensional Arrays
   - [Week 4](#Week-4): Recursion
   - [Week 5](#Week-5): Object-Oriented Thinking (OOP)
+  - [Week 6](#Week-6): Exception Handling
 
 ***
 
@@ -736,3 +737,91 @@ public class Staff extends Employee {
     }
 }
 ```
+***
+## Week-6
+### <ins>***Exception Handling & Errors & FileIO***</isn>
+### TheOneHundred (Binary Decimal Converter)
+```java
+/**
+ * A program to convert a binary string to decimal value with proper exception handling
+ */
+
+import java.util.Scanner;
+
+public class BinaryStringConverter {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            System.out.println("Enter the String you would like to convert: ");
+            String userInput = sc.nextLine();
+
+            try {
+                double result = thisToThat(userInput);
+                System.out.println("Your converted value is: " + result);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Not a binary number");
+            }
+        } while (true);
+
+        sc.close();
+
+    }
+
+    public static double thisToThat (String inp) throws NumberFormatException{
+        for (char c: inp.toCharArray()) {
+            if (c != '0' && c != '1') {
+                throw new NumberFormatException();
+            }
+        }
+        return Double.parseDouble(inp);
+    }
+}
+```
+### TheOneHundred Custom Exception
+```java
+public class BinaryFormatException extends Exception {
+    public BinaryFormatException(String message) {
+        super(message);
+    }
+}
+```
+### TheOneHundred with Custom Exception
+```java
+/**
+ * A program to convert a binary string to decimal value with custom exception handling
+ */
+import java.util.Scanner;
+
+public class BinaryStringConverterWithCustomException {
+        public static void main (String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            do {
+                System.out.println("Enter the String you would like to convert: ");
+                String userInput = sc.nextLine();
+
+                try {
+                    double result = thisToThat(userInput);
+                    System.out.println("Your converted value is: " + result);
+                    break;
+                } catch (BinaryFormatException e) {
+                    System.out.println("Not a binary number");
+                }
+            } while (true);
+
+            sc.close();
+        }
+
+        public static double thisToThat (String inp) throws BinaryFormatException{
+            for (char c: inp.toCharArray()) {
+                if (c != '0' && c != '1') {
+                    throw new BinaryFormatException("Not a binary number");
+                }
+            }
+            return Double.parseDouble(inp);
+        }
+    }
+```
+***
