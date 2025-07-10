@@ -9,7 +9,7 @@
   - [Week 4](#Week-4): Recursion
   - [Week 5](#Week-5): Object-Oriented Thinking (OOP)
   - [Week 6](#Week-6): Exception Handling & File IO
-  - [Week 7](#Week-7): JavaFX GUI
+  - [Week 7](#Week-7): JavaFX GUI (Seperate Repo.)
   - [Week 8](#Week-8): Lists, Stacks, Queues, and Priority Queues
 
 ***
