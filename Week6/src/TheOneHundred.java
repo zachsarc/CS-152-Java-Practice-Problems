@@ -1,3 +1,6 @@
+/**
+ * A Program to return the value of a 100 element array with proper exception handling
+ */
 import java.util.Scanner;
 
 public class TheOneHundred {

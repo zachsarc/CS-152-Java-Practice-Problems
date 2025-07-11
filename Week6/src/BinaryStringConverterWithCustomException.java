@@ -1,8 +1,6 @@
 import java.util.Scanner;
-/*(BinaryFormatException) Exercise 12.7 implements the bin2Dec method
-to throw a BinaryFormatException if the string is not a binary string. Define
-a custom exception called BinaryFormatException. Implement the bin2Dec
-method to throw a BinaryFormatException if the string is not a binary string.
+/**
+ * A program to convert a binary string to decimal value with custom exception handling
  */
 
 public class BinaryStringConverterWithCustomException {

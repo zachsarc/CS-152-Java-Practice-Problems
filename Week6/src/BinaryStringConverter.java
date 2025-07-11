@@ -1,3 +1,7 @@
+/**
+ * A program to convert a binary string to decimal value with proper exception handling
+ */
+
 import java.util.Scanner;
 
 public class BinaryStringConverter {
