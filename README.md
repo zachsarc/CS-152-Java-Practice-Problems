@@ -1046,3 +1046,176 @@ The whole purpose of this exercise is to show how inefficient indexing linked li
 while using the implemented iterator is superior for linked lists
  */
 ```
+### First Non-Reoeating using Queue
+```java
+import java.util.*;
+
+// A program that prints the first occurrence of a non-repeating letter in string, if all characters repeat then '_' is printed
+
+public class OccurenceQueue {
+    public static void main (String[] args) {
+        System.out.println(firstNonRepeating("abbccdd"));
+    }
+
+    public static char firstNonRepeating(String input) {
+        Queue<Character> q = new LinkedList<>();
+        Map<Character, Integer> m = new HashMap<>();
+        char qIsEmpty = '_';
+        for (char c: input.toCharArray()) {
+            q.add(c);
+            m.put(c, m.getOrDefault(c, 0) + 1);
+        }
+        while(!q.isEmpty() && m.get(q.peek()) > 1 ){
+            q.poll();
+        }
+        if (q.isEmpty()) {
+            return qIsEmpty;
+        } else {
+            return q.peek();
+        }
+    }
+}
+```
+### Palindrome Chcker Using Deque
+```java
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class PalindromeDeque {
+    public static void main(String[] args) {
+        System.out.println("Word 1: racecar " + isPalindrome("racecar"));
+        System.out.println("Word 2: car " + isPalindrome("car"));
+    }
+
+    public static String isPalindrome(String word) {
+        Deque<Character> dq = new ArrayDeque<>();
+        for (char c : word.toCharArray()) {
+            dq.addLast(c);
+        }
+        while (dq.size() > 1) {
+            char f = dq.removeFirst();
+            char l = dq.removeLast();
+            if (f != l) {
+                return "not a palindrome";
+            }
+        }
+        return "is a palindrome";
+    }
+}
+```
+### Reversed String using Stack
+```java
+ import java.util.Stack;
+
+    public class ReversedStringUsingStack {
+        public static void main(String[] args) {
+            System.out.println(reverseString("hello"));
+        }
+
+        public static String reverseString(String input) {
+            Stack<Character> stack = new Stack<>();
+            char[] charArray = input.toCharArray();
+            String reversed = "";
+            for (char c : charArray) {
+                stack.push(c);
+                System.out.println("Stack being built: " + stack);
+            }
+            while (!stack.isEmpty()) {
+                char r = stack.pop();
+                reversed += r;
+            }
+            return reversed;
+        }
+    }
+```
+### Parenthesis Validator Using Stack
+```java
+import java.util.Stack;
+
+public class ValidParUsingStack {
+    public static void main(String[] args) {
+        ValidParUsingStack test = new ValidParUsingStack();
+        System.out.println(test.isValid("()[]{}"));
+        System.out.println(test.isValid("([)]"));
+        System.out.println(test.isValid("{[]}"));
+        System.out.println(test.isValid("((())"));
+    }
+
+    public boolean isValid (String par) {
+        Stack<Character> stack = new Stack<>();
+
+            for (char c : par.toCharArray()) {
+                if (c == '(' || c == '{' || c == '[') {
+                    stack.push(c);
+                } else {
+                    if (stack.isEmpty()) return false;
+
+                    char top = stack.pop();
+
+                    if ((c == ')') && top != '(') return false;
+                    if ((c == '}') && top != '{') return false;
+                    if ((c == ']') && top != '[') return false;
+                }
+            }
+            return stack.isEmpty();
+    }
+}
+```
+### Task Scheduler Using Priority Queue
+```java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class TaskSchedulerPriorityQueue {
+    public static void main(String[] args) {
+        List<Task> lt = new ArrayList<>();
+        Task task1 = new Task("Feed the dog", 1);
+        Task task2 = new Task("Put away laundry", 3);
+        Task task3 = new Task("Feed myself", 2);
+        lt.add(task3);
+        lt.add(task1);
+        lt.add(task2);
+
+        scheduleTasks(lt);
+
+    }
+
+    public static void scheduleTasks(List<Task> tasks) {
+        PriorityQueue<Task> pq = new PriorityQueue<>();
+        pq.addAll(tasks);
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
+    }
+}
+```
+### Task class, Extension of Task Scheduler
+```java
+// this class sets up for TaskSchedulerPriorityQueue.java
+public class Task implements Comparable<Task>{
+    private String name;
+    private int priority;
+    public Task(String name, int priority) {
+        this.name = name;
+        this.priority = priority;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public int getPriority() {
+        return priority;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (priority: " + priority + ")";
+    }
+
+    @Override
+    public int compareTo(Task other) {
+        return Integer.compare(this.priority, other.priority);
+    }
+}
+```
