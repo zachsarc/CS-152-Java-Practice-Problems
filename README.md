@@ -1046,7 +1046,7 @@ The whole purpose of this exercise is to show how inefficient indexing linked li
 while using the implemented iterator is superior for linked lists
  */
 ```
-### First Non-Reoeating using Queue
+### First Non-Repeating using Queue
 ```java
 import java.util.*;
 
