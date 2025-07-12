@@ -1,8 +1,8 @@
 import java.util.Stack;
 
-public class ValidPar {
+public class ValidParUsingStack {
     public static void main(String[] args) {
-        ValidPar test = new ValidPar();
+        ValidParUsingStack test = new ValidParUsingStack();
         System.out.println(test.isValid("()[]{}"));
         System.out.println(test.isValid("([)]"));
         System.out.println(test.isValid("{[]}"));
