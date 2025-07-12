@@ -1,6 +1,6 @@
  import java.util.Stack;
 
-    public class ReversedString {
+    public class ReversedStringUsingStack {
         public static void main(String[] args) {
             System.out.println(reverseString("hello"));
         }
