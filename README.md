@@ -979,7 +979,7 @@ public class ReadAndWriting {
 ***
 ## Week-7
 ### <ins>***JavaFX GUI***</isn>
-### Local MP3 Player w/ slow functionality please refer to [this repo.](https://github.com/zachsarc/LocalMP3Player)
+### Local MP3 Player w/ rate functionality please refer to [this repo.](https://github.com/zachsarc/LocalMP3Player)
 
 ***
 ## Week-8
