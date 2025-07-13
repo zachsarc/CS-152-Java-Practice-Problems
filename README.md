@@ -979,7 +979,7 @@ public class ReadAndWriting {
 ***
 ## Week-7
 ### <ins>***JavaFX GUI***</isn>
-### Local MP3 Player w/ slow functionality please refer to [this repo.](https://github.com/zachsarc/LocalMP3Player)
+### Local MP3 Player w/ rate functionality please refer to [this repo.](https://github.com/zachsarc/LocalMP3Player)
 
 ***
 ## Week-8
@@ -1046,7 +1046,7 @@ The whole purpose of this exercise is to show how inefficient indexing linked li
 while using the implemented iterator is superior for linked lists
  */
 ```
-### First Non-Reoeating using Queue
+### First Non-Repeating using Queue
 ```java
 import java.util.*;
 
