@@ -1,4 +1,4 @@
-/*Sorting with Comparator is not for practical reasons (i.e. not preserve the original order), however,
+/* NOTE: Sorting with Comparator is not for practical reasons (i.e. not preserve the original order), however,
 I wanted to try and implement it somehow into this code.
  */
 
