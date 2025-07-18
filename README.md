@@ -1427,7 +1427,7 @@ public class ERTriageSystem {
     }
 }
 ```
-### Pation Extension of ER-Triage Database
+### Patient Extension of ER-Triage Database
 ```java
 public class Patient implements Comparable<Patient>{
 
