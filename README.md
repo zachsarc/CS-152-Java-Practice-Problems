@@ -10,7 +10,7 @@
   - [Week 5](#Week-5): Object-Oriented Thinking (OOP)
   - [Week 6](#Week-6): Exception Handling & File IO
   - [Week 7](#Week-7): JavaFX GUI (Seperate Repo.)
-  - [Week 8](#Week-8): Lists, Stacks, Queues, and Priority Queues
+  - [Week 8 & 9](#Week-8): Lists, Stacks, Queues, and Priority Queues
 
 ***
 
@@ -1288,4 +1288,175 @@ public class Student {
     }
 }
 ```
+***
+### Remove Duplicates using List
+```java
+/* NOTE: Sorting with Comparator is not for practical reasons (i.e. not preserve the original order), however,
+I wanted to try and implement it somehow into this code.
+ */
 
+import java.util.*;
+
+public class ListDuplicates {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(4);
+        list.add(3);
+        list.add(6);
+        list.add(4);
+        list.add(3);
+        System.out.println("The original list is " + removeDuplicates(list));
+    }
+
+    public static List<Integer> removeDuplicates(List<Integer> nums) {
+        List<Integer> list = new ArrayList<>();
+        Set<Integer> alreadySeenSet = new HashSet<>();
+
+        for (Integer n : nums) {
+            list.add(n);
+            alreadySeenSet.add(n);
+        }
+        System.out.println("The set with no duplicates is " + alreadySeenSet);
+        list.sort(Comparator.naturalOrder());
+        return list;
+    }
+}
+```
+***
+### Browser History Simulator
+```java
+public class BrowserHistorySimulation {
+    public static void main(String[] args) {
+        BrowserMain b1 = new BrowserMain();
+        b1.visit("https://www.google.com");
+        b1.visit("https://www.formula1.com");
+        b1.visit("https://www.ccsu.edu");
+        b1.visit("https://www.f1tv.formula1.com");
+
+        // Printing
+        System.out.println("Current page is: " + b1.getCurrentPage());
+        b1.back();
+        System.out.println("One page back is: " + b1.getCurrentPage());
+        b1.forward();
+        System.out.println("One page forward is: " + b1.getCurrentPage());
+        b1.back();
+        b1.back();
+        System.out.println("Two pages back is: " + b1.getCurrentPage());
+        b1.back();
+        System.out.println("One page back is: " + b1.getCurrentPage());
+    }
+}
+```
+### Browser Main Extension of Browser Simulation
+```java
+import java.util.ArrayDeque;
+
+public class BrowserMain {
+    ArrayDeque<String> backStack = new ArrayDeque<>();
+    ArrayDeque<String> forwardStack = new ArrayDeque<>();
+    String currentPage;
+
+    public void visit(String url) {
+        if (currentPage != null) {
+            backStack.push(currentPage);
+        }
+        currentPage = url;
+        forwardStack.clear();
+    }
+
+    public String back() {
+        if (backStack.isEmpty()) {
+            return currentPage;
+        }
+        forwardStack.push(currentPage);
+        currentPage = backStack.pop();
+        return currentPage;
+    }
+
+    public String forward() {
+        if (forwardStack.isEmpty()) {
+            return currentPage;
+        }
+        backStack.push(currentPage);
+        currentPage = forwardStack.pop();
+        return currentPage;
+    }
+
+    public String getCurrentPage() {
+        return currentPage == null ? "You're not on a page" : currentPage;
+    }
+}
+```
+***
+### ER-Triage Database
+```java
+// A program to simulate an Emergency Room Triage System
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class ERTriageSystem {
+    public static void main(String[] args) {
+        Patient p1 = new Patient("Bob Kodiak", 3, 1);
+        Patient p2 = new Patient("Don Kodiak", 1, 2);
+        Patient p3 = new Patient("Patty Zimmerman", 2, 3);
+        List<Patient> patients = new ArrayList<>();
+        patients.add(p1);
+        patients.add(p2);
+        patients.add(p3);
+
+
+        processPatients(patients);
+    }
+
+    public static void processPatients(List<Patient> patients) {
+        PriorityQueue<Patient> pq = new PriorityQueue<>();
+
+        System.out.println("--------------------Patient List--------------------");
+        for (Patient p : patients) {
+          pq.add(p);
+          System.out.println("Patient Name: " + p.getName() + "    Severity: " + p.getSeverity() + "    Arrival Place: " + p.getArrivalOrder());
+        }
+        System.out.println("----------------------------------------------------");
+        System.out.println();
+            while (!pq.isEmpty()) {
+                Patient currentPatient = pq.poll();
+                System.out.println("Currently treating: " + currentPatient.getName() + " (Severity: " + currentPatient.getSeverity() + ", Arrival Order: " + currentPatient.getArrivalOrder() + ")");
+            }
+    }
+}
+```
+### Pation Extension of ER-Triage Database
+```java
+public class Patient implements Comparable<Patient>{
+
+    private String name;
+    private int severity;
+    private int arrivalOrder;
+
+    public Patient(String name, int severity, int arrivalOrder) {
+        this.name = name;
+        this.severity = severity;
+        this.arrivalOrder = arrivalOrder;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSeverity() {
+        return severity;
+    }
+
+    public int getArrivalOrder() {
+        return arrivalOrder;
+    }
+
+    @Override
+    public int compareTo(Patient other) {
+        int severityCmp = Integer.compare(this.severity, other.severity);
+        return (severityCmp != 0) ? severityCmp : Integer.compare(this.arrivalOrder, other.arrivalOrder);
+    }
+}
+```
