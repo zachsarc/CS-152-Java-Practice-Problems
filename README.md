@@ -1460,3 +1460,90 @@ public class Patient implements Comparable<Patient>{
     }
 }
 ```
+***
+### Sliding Window Max with Deque
+```java
+import java.util.*;
+
+public class SlidingWindowMax{
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 3, 1, -2, 5, 2, 6, 8, 4, 10};
+        System.out.println(Arrays.toString(arr));
+        int windowSize = 3;
+        System.out.println(slidingWindowMax(arr, windowSize));
+    }
+
+    public static List<Integer> slidingWindowMax(int[] nums, int k) {
+        Deque<Integer> dq = new ArrayDeque<>();
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+                while (!dq.isEmpty() && nums[i] > nums[dq.peekLast()]) {
+                    dq.removeLast();
+                }
+            dq.addLast(i);
+
+            if (dq.peekFirst() < i - k + 1) { // Finding the leftmost index in the current window
+                dq.removeFirst();
+            }
+
+            if (i >= k - 1) { // Makes sure the window is full hence i = currentIndex and k - 1 is, the size of the window - 1 (i.e k=3, i=2 {0, 1, 2} so the first full window is 3-1= index 2
+                result.add(nums[dq.peekFirst()]); //
+            }
+        }
+        return result;
+    }
+}
+```
+***
+### Deleting Middle Element using Stack
+```java
+import java.util.Stack;
+public class DeleteMiddleOfStack {
+    public static void main(String[] args) {
+        Stack<Integer> oddStack = new Stack<>();
+        Stack<Integer> evenStack = new Stack<>();
+        System.out.println("------------Odd Stack Test------------");
+        oddStack.push(1);
+        oddStack.push(2);
+        oddStack.push(3);
+        oddStack.push(4);
+        oddStack.push(5);
+        System.out.println(oddStack + " - Original Stack");
+        System.out.println(removeMiddleElement(oddStack) + " - Modified Stack");
+        System.out.println("--------------------------------------");
+        System.out.println();
+        System.out.println("------------Even Stack Test------------");
+        evenStack.push(1);
+        evenStack.push(2);
+        evenStack.push(3);
+        evenStack.push(4);
+        evenStack.push(5);
+        evenStack.push(6);
+        System.out.println(evenStack + " - Original Stack");
+        System.out.println(removeMiddleElement(evenStack) + " - Modified Stack");
+        System.out.println("--------------------------------------");
+
+
+    }
+
+    public static Stack<Integer> removeMiddleElement(Stack<Integer> s) {
+        if(s.isEmpty()) {
+            return null;
+        }
+            Stack<Integer> tempStack = new Stack<>();
+            int size = s.size();
+            int middleIndex = (size % 2 == 0) ? (size / 2 - 1) : (size / 2);
+
+            for (int i = 0; i < middleIndex; i++) {
+                tempStack.push(s.pop());
+            }
+            s.pop();
+
+            while (!tempStack.isEmpty()) {
+                s.push(tempStack.pop());
+            }
+            return s;
+        }
+    }
+```
