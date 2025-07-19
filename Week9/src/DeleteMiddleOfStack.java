@@ -1,5 +1,4 @@
 import java.util.Stack;
-
 public class DeleteMiddleOfStack {
     public static void main(String[] args) {
         Stack<Integer> oddStack = new Stack<>();
