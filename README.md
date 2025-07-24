@@ -10,7 +10,7 @@
   - [Week 5](#Week-5): Object-Oriented Thinking (OOP)
   - [Week 6](#Week-6): Exception Handling & File IO
   - [Week 7](#Week-7): JavaFX GUI (Seperate Repo.)
-  - [Week 8 & 9](#Week-8-&-9): Lists, Stacks, Queues, and Priority Queues
+  - [Week 8 & 9](#Week-8_and_9): Lists, Stacks, Queues, and Priority Queues
   - [Week 10](#Week-10): Sets and Maps
 
 ***
@@ -983,7 +983,7 @@ public class ReadAndWriting {
 ### Local MP3 Player w/ rate functionality please refer to [this repo.](https://github.com/zachsarc/LocalMP3Player)
 
 ***
-## Week-8-&-9
+## Week-8_and_9
 ### <ins>***Lists, Stacks, Queues, Priority Queues***</isn>
 ### FiveMillion
 ```java
