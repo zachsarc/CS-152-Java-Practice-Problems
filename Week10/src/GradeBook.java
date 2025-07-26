@@ -93,7 +93,7 @@ public class GradeBook {
         System.out.println("Your student, " + k + "'s grade is a " + v);
         System.out.println();
         System.out.println("The current gradebook is as follows: ");
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Map.Entry<String, Integer> entry = it.next();
             System.out.println("Name: " + entry.getKey() + "    Grade: " + entry.getValue());
         }
