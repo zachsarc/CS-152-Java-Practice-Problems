@@ -14,7 +14,6 @@ public class CountOccurrencesFromFile {
     public static void countOccurrences(String filePath) {
         Map<String, Integer> mp = new TreeMap<>();
         File userFile = new File(filePath);
-
         if (!userFile.exists()) {
             System.out.println("File not found at path: " + filePath);
             return;
