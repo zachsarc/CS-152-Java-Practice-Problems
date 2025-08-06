@@ -28,7 +28,6 @@ public class QuickSort {
         for (int j = lowIndex; j < highIndex; j++) {
             if (arr[j] <= pivot) {
                 i++;
-                // swap i & j elements
                 swap(arr, i, j);
             }
         }
