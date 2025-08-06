@@ -12,6 +12,7 @@
   - [Week 7](#Week-7): JavaFX GUI (Seperate Repo.)
   - [Week 8 & 9](#Week-8_and_9): Lists, Stacks, Queues, and Priority Queues
   - [Week 10](#Week-10): Sets and Maps
+  - [Week 11](#Week-11): Sorting Algorithms
 
 ***
 
@@ -1614,6 +1615,7 @@ public class CountOccurrencesFromFile {
     }
 }
 ```
+***
 ### SetMethods
 ```java
 import java.util.HashSet;
@@ -1714,6 +1716,7 @@ public class SetMethods {
     }
 }
 ```
+***
 ### Advanced Grade book using Map<>
 ```java
 import java.util.HashMap;
@@ -1819,6 +1822,7 @@ public class GradeBook {
     }
 }
 ```
+***
 ### Remove Redundant Words - Displayed in Lexicographical Order
 ```java
 import java.util.*;
@@ -1876,4 +1880,213 @@ public class UniqueWords {
 }
 
 // Test Phrase with redundant words: apple banana orange apple grape banana
+```
+***
+## Week-11
+### <ins>***Sorting and Algorithms***</isn>
+### BubbleSort (x5)
+```java
+import java.util.Arrays;
+
+public class BubbleSort2 {
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 1, 100, 90, 76, 45};
+        bubbleSortTwo(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void bubbleSortTwo(int[] arr) {
+        int n = arr.length;
+        boolean swapped;
+
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            // If no two elements were swapped on the inner array, then it is sorted break of out loop
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+}
+```
+***
+### Insertion Sort (x2)
+```java
+import java.util.Arrays;
+
+public class InsertionSort {
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 1, 100, 90, 76, 45};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    private static void sort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 1; i < n; i++) {
+            int key = arr[i]; // Current element
+            int j = i - 1; // Element before current element
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+}
+```
+***
+###
+```java
+import java.util.Arrays;
+
+public class InsertionSort {
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 1, 100, 90, 76, 45};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    private static void sort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 1; i < n; i++) {
+            int key = arr[i]; // Current element
+            int j = i - 1; // Element before current element
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+}
+```
+***
+### MergeSort (x10)
+```java
+import java.util.Arrays;
+
+public class MergeSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 3, 6};
+        System.out.println("Original Array: ");
+        System.out.println(Arrays.toString(arr));
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted Array: ");
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static void mergeSort(int[] arr, int start, int end) {
+        if (start >= end) { // Base case: if the array has 1 or no elements, it's already sorted
+            return;
+        }
+        int mid = (start + end) / 2;
+
+        mergeSort(arr, start, mid); // Recursively sort the left half
+        mergeSort(arr, mid + 1, end); // Recursively sort the right half
+        merge(arr, start, mid, end); // Merge the two sorted halves
+    }
+
+    private static void merge(int[] arr, int start, int mid, int end) {
+        int n1 = mid - start + 1; // Size of the left half
+        int n2 = end - mid; // Size of the right half
+
+        int[] lh = new int[n1]; // temp array for the left half with size n1
+        int[] rh = new int[n2]; // temp array for the right half with size n2
+
+        // Copy the left half of arr into lh[]
+        for (int i = 0; i < n1; i++) {
+            lh[i] = arr[start + i];
+        }
+
+        // Copy the right half of arr into rh[]
+        for (int j = 0; j < n2; j++) {
+            rh[j] = arr[mid + 1 + j];
+        }
+        // Initialize pointers for lh[], rh[], and the main arr[]
+        int i = 0, j = 0, k = start;
+
+        // Merge the lh[] and rh[] arrays into arr[]
+        while (i < n1 && j < n2) {
+            if (lh[i] <= rh[j]) { // Take from the left half if smaller
+                arr[k] = lh[i]; // Assign the smaller left-half element to arr[k] element at kth position
+                i++; // Increment i for next comparison
+            } else { // Take from right if smaller
+                arr[k] = rh[j]; // Assign the smaller right-half element to arr[k] element at kth position
+                j++; // Increment j for next comparison
+            }
+            k++; // increment to move to next position in result array
+        }
+        // Copy any remaining elements from lh[]
+        while (i < n1) {
+            arr[k] = lh[i];
+            i++;
+            k++;
+        }
+        // Copy any remaining elements from rh[]
+        while (j < n2) {
+            arr[k] = rh[j];
+            j++;
+            k++;
+        }
+    }
+}
+```
+***
+### QuickSort (x10)
+```java
+import java.util.Arrays;
+
+public class QuickSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 3, 6};
+        System.out.println("Original Array: ");
+        System.out.println(Arrays.toString(arr));
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted Array: ");
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static void quickSort(int[] arr, int lowIndex, int highIndex) {
+        if (lowIndex >= highIndex) {
+            return;
+        }
+        int pivotIndex = partition(arr, lowIndex, highIndex);
+
+        quickSort(arr, lowIndex, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, highIndex);
+
+    }
+
+    private static int partition(int[] arr, int lowIndex, int highIndex) {
+        int pivot = arr[highIndex];
+        int i = lowIndex - 1;
+
+        for (int j = lowIndex; j < highIndex; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i + 1, highIndex);
+
+        return i + 1;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
 ```
