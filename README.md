@@ -13,6 +13,7 @@
   - [Week 8 & 9](#Week-8_and_9): Lists, Stacks, Queues, and Priority Queues
   - [Week 10](#Week-10): Sets and Maps
   - [Week 11](#Week-11): Sorting Algorithms
+  - [Week 12 & 13](#Week-12_and_13): Graphs and Final Project [Seperate Reoo](https://github.com/zachsarc/CS152_Final-Project)
 
 ***
 
@@ -2063,3 +2064,10 @@ public class QuickSort {
     }
 }
 ```
+***
+## Week-12_and_13
+### <ins>***Final Project***</isn>
+### Advanced Running Log
+[Seperate Repo](https://github.com/zachsarc/CS152_Final-Project)
+
+#You've reached the end, thank you!
